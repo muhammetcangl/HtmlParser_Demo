@@ -14,7 +14,7 @@ namespace HtmlParser_demo
         {
             List<string> liste = new List<string>();//Gelen veriyi saklayacağımız alan String tipinden oluşturuluyor.
 
-            Uri url = new Uri("https://teknoparkistanbul.com.tr/firma-listesi");
+            Uri url = new Uri("YOUR TARGET URL");
             WebClient client = new WebClient();
             client.Encoding = System.Text.Encoding.UTF8;
 
@@ -26,7 +26,7 @@ namespace HtmlParser_demo
             foreach (HtmlNode link in dokuman.DocumentNode.SelectNodes("//a[@href]"))
             {
                 HtmlAttribute att = link.Attributes["href"];
-                if (att.Value.Contains("https://teknoparkistanbul.com.tr/firma-listesi/"))
+                if (att.Value.Contains("YOUR TARGET"))
                     Console.WriteLine(att.Value);
             }
 
